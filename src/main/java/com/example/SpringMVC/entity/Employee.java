@@ -5,6 +5,7 @@ package com.example.SpringMVC.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -56,7 +57,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    public void setFullTime(Boolean fullTime) {
+    public void setFullTime(String fullTime) {
         this.fullTime = fullTime;
     }
 
@@ -84,7 +85,7 @@ public class Employee {
         return salary;
     }
 
-    public Boolean getFullTime() {
+    public String getFullTime() {
         return fullTime;
     }
 
@@ -99,7 +100,7 @@ public class Employee {
     @Column(name = "last_name")
     private String lastName;
 
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
@@ -126,6 +127,6 @@ public class Employee {
 
     @NotNull(message = "Musíte zadať, či ide o brigádu alebo full-time")
     @Column(name = "full_time")
-    private Boolean fullTime;
+    private String fullTime;
 
 }

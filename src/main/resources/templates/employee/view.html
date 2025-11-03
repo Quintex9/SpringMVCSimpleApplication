@@ -114,7 +114,7 @@
       <p class="card-text"><strong>Pozícia:</strong> <span th:text="${employee.jobTitle}"></span></p>
       <p class="card-text"><strong>Plat:</strong> <span th:text="${employee.salary} + ' €'"></span></p>
       <p class="card-text"><strong>Úväzok:</strong>
-        <span th:text="${employee.fullTime} ? 'Full Time' : 'Brigáda'"></span>
+        <span th:text="${employee.fullTime}"></span>
       </p>
     </div>
 
